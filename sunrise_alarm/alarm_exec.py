@@ -33,11 +33,11 @@ def main(leds: LEDInterface, settings_dir: str):
         elif before(current_time, settings.max_brightness_time):
             # If it's between turn-on and max-brightness times, set LEDs to appropriate brightness
             desired_intensity = get_desired_intensity(current_time, settings)
-            print(f"[alarm_exec] Current time {current_time}; setting LEDs to {desired_intensity}")
+            print(f"[alarm_exec] Current time {current_time}; fading LEDs to {desired_intensity}")
             leds.set(settings.color, desired_intensity)
         else:
             # If it's after the max-brightness time, set LEDs to full brightness
-            print(f"[alarm_exec] Current time {current_time}; setting LEDs to {settings.intensity}")
+            print(f"[alarm_exec] Current time {current_time}; setting LEDs to full {settings.intensity}")
             leds.set(settings.color, settings.intensity)
 
 
