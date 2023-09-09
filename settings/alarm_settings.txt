@@ -1,0 +1,4 @@
+16:11:05       # alarm start time
+16:12       # alarm maximum brightness time
+0.5         # fraction of maximum LED power at max brightness; float [0, 1] (values >1 will be clipped to 1)
+155 89 182  # color of alarm; int [0, 255]

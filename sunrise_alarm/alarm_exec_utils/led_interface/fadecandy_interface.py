@@ -46,6 +46,10 @@ class FadecandyInterface(LEDInterface):
         intensity = self.clamp_intensity(intensity)
         rgb = self.clamp_rgb(rgb)
 
+        # There is an annoying flicker on Fadecandy below 0.15 intensity, so clamp it
+        if 0 < intensity < 0.15:
+            intensity = 0.15
+
         # Scale color by intensity
         rgb = [int(color * intensity) for color in rgb]
 

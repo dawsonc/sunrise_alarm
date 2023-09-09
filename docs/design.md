@@ -2,22 +2,22 @@
 
 ## User stories
 
-- I want to be woken gently by a light that gently fades from dark to bright.
-- I want to set the time at which the light turns on, and how fast the light turns on.
-- I want to set the color of the light in RGB.
-- I want to use a web interface to manage the alarm settings.
-- I want to use a web interface to turn the alarm off.
+- [x] I want to be woken gently by a light that gently fades from dark to bright.
+- [x] I want to set the time at which the light turns on, and how fast the light turns on.
+- [x] I want to set the color of the light in RGB.
+- [ ] I want to use a web interface to manage the alarm settings.
+- [ ] I want to use a web interface to turn the alarm off.
 
 ## Design
 
 There will be several components:
 
-- **alarm_settings.txt**: a text file containing the current settings for the alarm.
-- **disable_alarm**: a file that, if present, prevents the alarm from running.
-- **reenable_alarm**: deletes the disable_alarm file, if present, every afternoon (cron job).
-- **alarm_exec**: a service that controls the brightness of the LEDs over time.
-- **alarm_manager**: a service that exposes a RESTful API for managing alarm settings.
-- **alarm_frontend**: a webpage that allows the user to manage alarm settings.
+- [x] **alarm_settings.txt**: a text file containing the current settings for the alarm.
+- [x] **disable_alarm**: a file that, if present, prevents the alarm from running.
+- [x] **reenable_alarm**: deletes the disable_alarm file, if present, every afternoon (cron job).
+- [x] **alarm_exec**: a service that controls the brightness of the LEDs over time.
+- [ ] **alarm_manager**: a service that exposes a RESTful API for managing alarm settings.
+- [ ] **alarm_frontend**: a webpage that allows the user to manage alarm settings.
 
 ### Settings files
 
