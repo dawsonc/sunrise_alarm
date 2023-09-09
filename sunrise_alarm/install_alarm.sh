@@ -10,6 +10,11 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 (crontab -l ; echo "0 12 * * * $script_dir/reenable_alarm.sh $HOME/.sunrise_alarm >> $HOME/.sunrise_alarm/logfile 2>&1") | crontab -
 
 # Add a cron job to run alarm_exec.py every 10 seconds
-(crontab -l ; echo "* * * * * for i in {1..6}; do $script_dir/alarm_exec.py $HOME/.sunrise_alarm  >> $HOME/.sunrise_alarm/logfile 2>&1 & sleep 10; done") | crontab -
+(crontab -l ; echo "* * * * * $script_dir/alarm_exec.py $HOME/.sunrise_alarm  >> $HOME/.sunrise_alarm/logfile 2>&1") | crontab -
+(crontab -l ; echo "* * * * * sleep 10; $script_dir/alarm_exec.py $HOME/.sunrise_alarm  >> $HOME/.sunrise_alarm/logfile 2>&1") | crontab -
+(crontab -l ; echo "* * * * * sleep 20; $script_dir/alarm_exec.py $HOME/.sunrise_alarm  >> $HOME/.sunrise_alarm/logfile 2>&1") | crontab -
+(crontab -l ; echo "* * * * * sleep 30; $script_dir/alarm_exec.py $HOME/.sunrise_alarm  >> $HOME/.sunrise_alarm/logfile 2>&1") | crontab -
+(crontab -l ; echo "* * * * * sleep 40; $script_dir/alarm_exec.py $HOME/.sunrise_alarm  >> $HOME/.sunrise_alarm/logfile 2>&1") | crontab -
+(crontab -l ; echo "* * * * * sleep 50; $script_dir/alarm_exec.py $HOME/.sunrise_alarm  >> $HOME/.sunrise_alarm/logfile 2>&1") | crontab -
 
 echo "Cron jobs added successfully."
